@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Workflow>
+    <WorkflowId>0</WorkflowId>
+    <task>
+        <TaskId>0</TaskId>
+        <TaskType>CoreExe</TaskType>
+        <MethodName>PrintStatement</MethodName>
+        <TypeName>WorkflowCore.DefaultLibs</TypeName>
+        <params>
+            <param>
+                <paramType>String</paramType>
+                <paramValue>First Message</paramValue>
+            </param>
+            <param>
+                <paramType>String</paramType>
+                <paramValue>First Message</paramValue>
+            </param>
+        </params>
+        <NextTaskID>1</NextTaskID>
+    </task>
+    <task>
+        <TaskId>1</TaskId>
+        <TaskType>CoreExe</TaskType>
+        <MethodName>PrintStatement</MethodName>
+        <TypeName>WorkflowCore.DefaultLibs</TypeName>
+        <params>
+            <param>
+                <paramType>String</paramType>
+                <paramValue>Second Message</paramValue>
+            </param>
+            <param>
+                <paramType>String</paramType>
+                <paramValue>First Message</paramValue>
+            </param>
+        </params>
+        <NextTaskID>END</NextTaskID>
+    </task>
+</Workflow>
