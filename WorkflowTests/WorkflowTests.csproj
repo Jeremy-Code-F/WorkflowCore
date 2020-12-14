@@ -15,6 +15,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WorkflowCore\WorkflowCore.csproj" />
+    <None Update="ExampleJob.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     
   </ItemGroup>
 

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WorkflowCore.DAL;
 using WorkflowCore.Models;
 using WorkflowCore.Services;
 
@@ -17,8 +18,10 @@ namespace WorkflowTests
             taskOne.TaskType = "CoreExe";
             taskOne.MethodName = "PrintStatement";
             taskOne.TypeName = "WorkflowCore.DefaultLibs";
-            taskOne.Params = new Params();
-            taskOne.Params.Param = new List<Param>();
+            taskOne.Params = new Params
+            {
+                Param = new List<Param>()
+            };
             Param paramOne = new Param();
             paramOne.ParamType = "String";
             paramOne.ParamValue = "First Message";
@@ -43,9 +46,10 @@ namespace WorkflowTests
 
             Workflow testWorkflow = new Workflow();
             testWorkflow.Task =taskList;
-            WorkflowService workflowService = new WorkflowService();
+            WorkflowRepo workflowRepo = new WorkflowRepo();
+            WorkflowService workflowService = new WorkflowService(workflowRepo);
 
-            workflowService.RunWorkflow(testWorkflow);
+            workflowService.RunWorkflow();
         }
     }
 }

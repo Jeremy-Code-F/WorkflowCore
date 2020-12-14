@@ -4,7 +4,7 @@ namespace WorkflowCore.DefaultLibs
 {
     public class DefaultLib
     {
-        public void PrintStatement(string Message){
+        public static void PrintStatement(string Message){
             Console.WriteLine(Message);
         }
 
